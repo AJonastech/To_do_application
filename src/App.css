@@ -1,0 +1,80 @@
+@keyframes modalFade {
+  from{
+    background-color: rgba(0,0,0,0)}
+  to{
+
+  background-color: rgba(0,0,0,0.5)
+  }
+}
+#Categories{
+
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+label {
+  position: relative;
+  cursor: pointer;
+}
+
+ input[type="checkbox"]{
+  padding:0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+ label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+ input[type="checkbox"]:checked +label:after  {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid #0079bf;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+#modal{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  animation-name: modalFade;
+  animation-duration: 0.5s;
+  background-color: rgba(0,0,0,0.5);
+}
+#custom-btn{
+  
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+  position: absolute;
+  bottom:50px;
+  right: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+#custom-btn1{
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+  position: absolute;
+  bottom:-25px;
+  right: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+}
