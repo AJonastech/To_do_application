@@ -2,7 +2,6 @@ import React from 'react'
 
 function Nav() {
     return (
-       
             <nav className='  flex justify-between px-2 py-3  bg-blue-500'>
        <h1 className='text-white font-BioRhyme md:text-3xl text-2xl'> WORKFLOW
        
