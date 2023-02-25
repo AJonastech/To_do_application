@@ -6,9 +6,21 @@ import Nav from './components/Nav';
 
 function App() {
   const [todoCategories, setTodoCategories] = useState([]);
+  //This taskDate is a string of input from the input element on the Modal, data is stored
+  //here first before it is transferred to the taskArray which contains an array of all todo
+  //yet to be done.
   const [taskData, setTaskData]= useState("");
+  //This is used to store the category of task to be done
   const [title, setTitle]=useState("");
   const [taskArray, setTaskArray]=useState([]);
+  //Helps to collect info on background color of task category cards
+  const [color,setColor]= useState("");
+  
+  const submitColor = (color)=>{
+       setColor(color);
+       console.log(color)
+ 
+  }
   const displayModal = ()=>{
     const element = document.getElementById("modal");
     element.classList.remove("hidden");
@@ -27,10 +39,11 @@ function App() {
       const emptyObject = {};
       emptyObject['Title'] = title;
       emptyObject['Tasks'] = taskArray;
-      emptyObject["color"] = "green"
+      emptyObject["color"] = color;
       setTodoCategories([...todoCategories, emptyObject]);
       setTitle("");
       setTaskArray([]);
+      setColor("");
       const element = document.getElementById("modal");
       element.classList.add("hidden");
       console.log(todoCategories);
@@ -48,7 +61,7 @@ function App() {
       </div>
     </main>
     <Modal closeModal={closeModal} title={title} setTitle={setTitle} setTaskData={setTaskData} taskData={taskData} taskArray={taskArray} 
-    Addtask={Addtask} addCategoryTodo={addCategoryTodo}/>
+    Addtask={Addtask} addCategoryTodo={addCategoryTodo} submitColor={submitColor}/>
     </>
   );
 }

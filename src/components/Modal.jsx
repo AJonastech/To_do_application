@@ -1,7 +1,8 @@
 import React from 'react'
 
-function Modal({closeModal, title, setTitle,setTaskData,taskData,taskArray,Addtask,addCategoryTodo}) {
-    return (
+function Modal({closeModal,submitColor, title, setTitle,setTaskData,taskData,taskArray,Addtask,addCategoryTodo}) {
+      
+  return (
         
     <section className=' hidden flex items-center justify-center' id="modal">
     <main  id="modal-container" className='relative px-4 py-5 w-[300px] bg-white '>
@@ -34,6 +35,26 @@ function Modal({closeModal, title, setTitle,setTaskData,taskData,taskArray,Addta
       <div>
          
      <button onClick = {Addtask}><i className='fas mr-1 fa-plus'></i> Add task</button>
+      </div>
+      <br/>
+      <div  className='flex '>
+       
+        <p className='relative mx-1 w-[20px] h-[20px]'>
+        <input className='bg-orange-400' type="radio" name="colorSelector" onClick={()=>{submitColor("orange")}} />
+        </p>
+        <p className='relative mx-1 w-[20px] h-[20px]'>
+        <input className='bg-green-400' type="radio" name="colorSelector" onClick={()=>{submitColor("green")}} />
+        </p>
+        <p className='relative mx-1 w-[20px] h-[20px]'>
+         
+        <input className='bg-blue-400' type="radio" name="colorSelector" onClick={()=>{submitColor("blue")}} />
+        </p>
+         <p className='relative mx-1 w-[20px] h-[20px]'>
+         <input className='bg-red-400' type="radio" name='colorSelector' onClick={()=>{submitColor("red")}} />
+         </p>
+      
+      
+        
       </div>
       <div>
       <br/>

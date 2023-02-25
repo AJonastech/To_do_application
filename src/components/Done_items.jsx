@@ -3,7 +3,7 @@ import React from 'react'
 function Doneitems(item) {
     return (
        <p className='mb-2'>
-        <input type="checkbox" checked/>
+        <input type="checkbox" defaultChecked/>
         <s>{item.desc}</s>
        </p>
     )
