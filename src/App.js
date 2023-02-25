@@ -41,8 +41,11 @@ function App() {
     <button onClick={ displayModal}id="custom-btn">
     <i className="text-2xl text-blue-500 fas fa-plus"></i>
       </button>
-    <main className='font-poppins flex-wrap justify-around px-3 py-3 relative flex '>
+    <main className='font-poppins flex justify-center px-3 py-3 relative  '>
+      <div className=' cards   w-[90%]'>
+        
      <Categoriescard todoCategories={todoCategories}/>
+      </div>
     </main>
     <Modal closeModal={closeModal} title={title} setTitle={setTitle} setTaskData={setTaskData} taskData={taskData} taskArray={taskArray} 
     Addtask={Addtask} addCategoryTodo={addCategoryTodo}/>

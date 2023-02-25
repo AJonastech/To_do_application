@@ -6,6 +6,24 @@
   background-color: rgba(0,0,0,0.5)
   }
 }
+@media screen and (min-width: 40em) {
+  .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
+
+  .card {
+      flex: 0 1 calc(50% - 1em);
+  }
+}
+@media screen and (min-width: 60em) {
+
+  .card {
+      flex: 0 1 calc(25% - 1em);
+  }
+}
+
 #Categories{
 
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -63,10 +81,12 @@ label {
   width:50px;
   height:50px;
   border-radius: 25px;
-  position: absolute;
+  position: fixed;
   bottom:50px;
   right: 50px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  z-index: 1;
+  background-color: #fff;
 }
 #custom-btn1{
   width:50px;

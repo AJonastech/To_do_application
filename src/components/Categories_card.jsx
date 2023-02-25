@@ -6,7 +6,7 @@ function Categoriescard({todoCategories}) {
         <>
         {
               todoCategories.map((categories, index)=>(
-          <div key={index} id="Categories" className='mt-3 w-[300px] rounded-br-3xl  px-3 py-3 text-white bg-green-500'>
+          <div key={index} id="Categories" className={'card mt-4    rounded-br-3xl  px-3 py-3 text-white bg-'+categories["color"]+'-400'}>
             
               
             <h3 className="font-bold mb-3 text-xl"> {categories["Title"]}</h3>
@@ -18,7 +18,7 @@ function Categoriescard({todoCategories}) {
            
     
           
-           <h4> Accomplished tasks</h4>
+           <h4> Accomplished tasks </h4>
            <Doneitems desc="Feed the Dogs"/>
            <Doneitems desc=" Flush the toilet"/>
           
