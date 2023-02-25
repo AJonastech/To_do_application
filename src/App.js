@@ -15,7 +15,7 @@ function App() {
   const [taskArray, setTaskArray]=useState([]);
   //Helps to collect info on background color of task category cards
   const [color,setColor]= useState("");
-  
+
   const submitColor = (color)=>{
        setColor(color);
        console.log(color)
@@ -38,15 +38,17 @@ function App() {
   const addCategoryTodo = ()=>{
       const emptyObject = {};
       emptyObject['Title'] = title;
-      emptyObject['Tasks'] = taskArray;
+      emptyObject["taskDetails"] = taskArray.map((tasks)=>{
+             return {"detail": tasks, "status":true}
+      });
       emptyObject["color"] = color;
+      
       setTodoCategories([...todoCategories, emptyObject]);
       setTitle("");
       setTaskArray([]);
       setColor("");
       const element = document.getElementById("modal");
       element.classList.add("hidden");
-      console.log(todoCategories);
   }
   return (
     <>

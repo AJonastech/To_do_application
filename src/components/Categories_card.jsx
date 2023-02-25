@@ -11,8 +11,10 @@ function Categoriescard({todoCategories}) {
               
             <h3 className="font-bold mb-3 text-xl"> {categories["Title"]}</h3>
           {
-            categories["Tasks"].map((Tasks, index)=>(
-                   <TodoItems key={index} desc={Tasks}/>
+            categories["taskDetails"].map((Tasks, index)=>(
+             
+                   <TodoItems key={index} desc={Tasks["detail"]}/>
+               
             ))
           }
            
