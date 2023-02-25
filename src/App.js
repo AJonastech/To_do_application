@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { scryRenderedDOMComponentsWithClass } from 'react-dom/test-utils';
 import './App.css';
 import Categoriescard from './components/Categories_card';
 import Modal from './components/Modal';
@@ -15,7 +16,20 @@ function App() {
   const [taskArray, setTaskArray]=useState([]);
   //Helps to collect info on background color of task category cards
   const [color,setColor]= useState("");
+const toggletaskState = (Category, task)=>{
+ if (todoCategories[Category]["taskDetails"][task]["status"]==true){
 
+  todoCategories[Category]["taskDetails"][task]["status"]=false;
+
+setTodoCategories([...todoCategories]);
+ }else{
+
+  todoCategories[Category]["taskDetails"][task]["status"]=true;
+
+setTodoCategories([...todoCategories]);
+ }
+}
+console.log(todoCategories);
   const submitColor = (color)=>{
        setColor(color);
        console.log(color)
@@ -59,7 +73,7 @@ function App() {
     <main className='font-poppins flex justify-center px-3 py-3 relative  '>
       <div className=' cards   w-[90%]'>
         
-     <Categoriescard todoCategories={todoCategories}/>
+     <Categoriescard todoCategories={todoCategories} toggleTaskState={toggletaskState}/>
       </div>
     </main>
     <Modal closeModal={closeModal} title={title} setTitle={setTitle} setTaskData={setTaskData} taskData={taskData} taskArray={taskArray} 
