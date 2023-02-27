@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Modal({closeModal,submitColor, title, setTitle,setTaskData,taskData,taskArray,Addtask,addCategoryTodo}) {
+function Modal({closeModal,msg,setMsg, submitColor, title, setTitle,setTaskData,taskData,taskArray,Addtask,addCategoryTodo}) {
       
   return (
         
@@ -12,17 +12,24 @@ function Modal({closeModal,submitColor, title, setTitle,setTaskData,taskData,tas
       <div>
       
      <input placeholder='Title' value={title} onChange={(e)=>{
-        setTitle(e.target.value)
+      
+        setTitle(e.target.value);
+        msg[0]=""
+        setMsg(msg)
+      
      }} className=' font-bold w-[100%] outline-none border-b-2 border-gray-200' type="text"/>
+      <p className='text-red-500 text-lg '>{msg[0]}</p>
       </div>
       <br/>
       <div className='mb-1'>
         <input  onChange={(e)=>{
 
-            setTaskData(e.target.value)
+            setTaskData(e.target.value);
+            msg[1]="";
+            setMsg(msg)
            
-            console.log(taskData)
         }} value={taskData} className='w-[100%] outline-none border-b-2 border-gray-200' placeholder='Enter the task here' type="text"/>
+         <p className='text-red-500 text-lg '>{msg[1]}</p>
       </div>
   
       <div>
